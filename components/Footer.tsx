@@ -1,10 +1,10 @@
-import React from 'react'
+
 
 const Footer = () => {
   return (
-    <div> 
-   <h1>Footer section</h1>
-    </div>
+    <footer className="flex flex-col text-black-100 mt-5 border-t border-gray-100"> 
+   
+    </footer>
     
   )
 }
