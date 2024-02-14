@@ -1,37 +1,29 @@
 "use client";
-import React from 'react'
-import { CustomButton } from '.'
-import Image from 'next/image';
+
+import { useEffect } from 'react'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 
 const Hero = () => {
-    const handleScroll = () => {
-
-    }
+  
+   useEffect(() => {
+      AOS.init({
+           duration:3000,
+           once: false,
+         })
+   }, [])
   return (
-    <div className='hero'>
-        <div className='flex-1 pt-36 padding-x'>
-     <h1 className='hero__title'>
-        Find, book or rent a car - quickly
-        and easily
-     </h1>
-     <p className='hero__subtitle'>
-        Streamline your car rental experience with our effortless booking process.
-     </p>
+    <div className='relative'>
 
-     <CustomButton
-      title="Explore Cars"
-      containerStyles="bg-primary-blue text-white rounded-full mt-10 "
-      handleClick= {handleScroll}
-     />
-        </div>
-        <div className='hero__image-container'>
-     <div className='hero__image'>
-     <Image src='/hero.png' alt='hero ' fill className='object-contain'></Image>
-     </div>
-     <div className='hero__image-overlay'></div>
+     <video autoPlay loop muted playsInline >
+     <source className='object-fill' src="/Toyota_Supra_-_Cinematic(1080p).mp4" type="video/mp4" />
     
-        </div>
+     </video>
+       <div data-aos="fade-up" data-aos-duration="3000" >
+       <h1 className='absolute -mt-40 md:ml-36 mr-24  text-white text-5xl font-extrabold' data-aos-easing="ease-in-out"  data-aos-delay="3000"  >Accused Drug Lord's Rare Toyota Supra Sells for Record $308K: The 'Fast and Furious' Franchise Made Car Famous</h1>
+       </div>
     </div>
   )
 }
